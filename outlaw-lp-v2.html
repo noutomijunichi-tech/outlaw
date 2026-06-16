@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>就活アウトロー採用 | キャリア解放区</title>
+  <meta name="description" content="ESなし、面接なし、服装自由。就活の違和感を抱えたまま、それでも働きたいと思っているあなたへ。2012年から続く、対話だけで仕事を見つける採用プログラム。">
+  <meta property="og:title" content="就活アウトロー採用 | キャリア解放区">
+  <meta property="og:description" content="ESなし、面接なし、服装自由。就活の違和感はそのままでいい。対話だけで仕事を見つける採用プログラム、2012年から続いています。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://outlaw.so/">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #1c1208;
+      --off-white: #faf6ef;
+      --accent: #c05830;
+      --gray: #8a7f75;
+      --light-gray: #ede8df;
+      --text: #2a2018;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('img/session-wide.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.3) sepia(0.3);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 24px 64px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      color: rgba(250,246,239,0.7);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-lead {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: rgba(255,255,255,0.72);
+      max-width: 500px;
+      margin-bottom: 40px;
+      line-height: 1.9;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 44px;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.88);
+      padding: 7px 16px;
+      font-size: 0.85rem;
+      border-radius: 2px;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--black);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 16px 40px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+
+    .btn-ghost {
+      display: inline-block;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      text-decoration: underline;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+    }
+    .btn-ghost:hover { color: rgba(255,255,255,0.9); }
+
+    /* stats bar */
+    .stats-bar {
+      background: #251a0e;
+      border-top: 1px solid rgba(192,88,48,0.2);
+    }
+
+    .stats-bar-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 28px 24px;
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {}
+    .stat-num {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .stat-num small { font-size: 1rem; }
+    .stat-label {
+      font-size: 0.75rem;
+      color: rgba(245,242,236,0.45);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 24px; }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: block;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+
+    p { margin-bottom: 20px; color: #3a3a3a; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── PHOTO STRIP ── */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 240px 240px;
+      gap: 4px;
+    }
+
+    .photo-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-strip .main-photo {
+      grid-row: 1 / 3;
+    }
+
+    @media (max-width: 600px) {
+      .photo-strip {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 160px 160px;
+      }
+      .photo-strip .main-photo {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+      }
+    }
+
+    /* ── WHY ── */
+    .why { background: #211609; color: var(--off-white); }
+    .why p { color: rgba(250,246,239,0.75); }
+    .why h2 { color: var(--off-white); }
+
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: 24px;
+      margin: 36px 0;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: rgba(245,242,236,0.9);
+    }
+
+    /* ── WHO ── */
+    .who { background: var(--off-white); }
+
+    .who-definition {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--text);
+      border-left: 3px solid var(--accent);
+      padding-left: 20px;
+      margin: 24px 0 12px;
+    }
+
+    .who-note {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 12px;
+    }
+
+    .who-eligibility {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .persona-tabs {
+      display: flex;
+      gap: 0;
+      margin-top: 40px;
+      margin-bottom: 0;
+    }
+
+    .persona-tab {
+      flex: 1;
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      background: var(--light-gray);
+      color: var(--gray);
+      border: none;
+      transition: all 0.2s;
+    }
+    .persona-tab.active {
+      background: var(--black);
+      color: var(--accent);
+    }
+
+    .persona-panel {
+      display: none;
+      background: white;
+      border: 1px solid var(--light-gray);
+      padding: 32px;
+    }
+    .persona-panel.active { display: block; }
+
+    .persona-panel h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .persona-panel .panel-sub {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+
+    .persona-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .persona-list li {
+      display: flex;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: #3a3a3a;
+      line-height: 1.6;
+      align-items: flex-start;
+    }
+    .persona-list li::before {
+      content: '—';
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── HOW ── */
+    .how { background: #1c1208; color: var(--off-white); }
+    .how h2 { color: var(--off-white); }
+
+    .steps {
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      align-items: start;
+    }
+    .step:last-child { border-bottom: none; }
+
+    .step-num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: rgba(200,169,110,0.28);
+      line-height: 1;
+      padding-top: 4px;
+    }
+
+    .step-content h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--off-white);
+      margin-bottom: 6px;
+    }
+    .step-content p {
+      font-size: 0.9rem;
+      color: rgba(250,246,239,0.62);
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    /* session photo in how section */
+    .how-photo {
+      margin-top: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .how-photo img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.85);
+    }
+    .how-photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 24px;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── VOICES ── */
+    .voices { background: var(--off-white); }
+
+    .voice-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 48px;
+    }
+
+    .voice {
+      display: grid;
+      grid-template-columns: 4px 1fr;
+      gap: 28px;
+    }
+    .voice-bar { background: var(--accent); }
+
+    .voice-text {
+      font-size: 0.93rem;
+      line-height: 1.9;
+      color: #333;
+      margin-bottom: 14px;
+    }
+    .voice-name {
+      font-size: 0.78rem;
+      color: var(--gray);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESULTS ── */
+    .results { background: #1c1208; color: var(--off-white); }
+    .results h2 { color: var(--off-white); }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1px;
+      background: rgba(255,255,255,0.07);
+      margin-top: 40px;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .case-item {
+      background: #231609;
+      padding: 24px;
+    }
+    .case-num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .case-label {
+      font-size: 0.8rem;
+      color: rgba(245,242,236,0.5);
+      line-height: 1.6;
+    }
+
+    /* ── SCHEDULE ── */
+    .schedule { background: var(--off-white); }
+
+    .schedule-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--light-gray);
+    }
+
+    .schedule-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .schedule-item:last-child { border-bottom: none; }
+
+    .schedule-date {
+      background: #231609;
+      color: var(--accent);
+      padding: 20px;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      line-height: 1.9;
+      display: flex;
+      align-items: center;
+    }
+
+    .schedule-desc {
+      padding: 20px 24px;
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .schedule-desc strong { font-weight: 700; display: block; margin-bottom: 4px; }
+
+    .schedule-note {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--gray);
+      line-height: 1.9;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: #1c1208; color: var(--off-white); }
+    .about h2 { color: var(--off-white); }
+    .about p { color: rgba(250,246,239,0.68); }
+
+    .about-profile {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      margin-top: 40px;
+      align-items: start;
+    }
+
+    .about-avatar {
+      width: 80px;
+      height: 80px;
+      background: rgba(200,169,110,0.15);
+      border: 1px solid rgba(200,169,110,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .about-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--off-white);
+      margin-bottom: 4px;
+    }
+    .about-title {
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .about-bio {
+      font-size: 0.85rem;
+      color: rgba(245,242,236,0.55);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .license-badge {
+      display: inline-block;
+      margin-top: 32px;
+      border: 1px solid rgba(200,169,110,0.2);
+      padding: 12px 20px;
+      font-size: 0.75rem;
+      color: rgba(245,242,236,0.35);
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 480px) {
+      .about-profile { grid-template-columns: 1fr; }
+    }
+
+    /* ── NEXT STEPS ── */
+    .next-steps { background: var(--light-gray); }
+
+    .steps-flow {
+      display: flex;
+      gap: 0;
+      margin-top: 40px;
+      position: relative;
+    }
+    .steps-flow::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(16.66% + 12px);
+      right: calc(16.66% + 12px);
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.3;
+    }
+    .step-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 16px;
+    }
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .step-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .step-desc {
+      font-size: 0.8rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+      .steps-flow {
+        flex-direction: column;
+        gap: 24px;
+      }
+      .steps-flow::before { display: none; }
+      .step-item {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .step-num { margin-bottom: 0; }
+    }
+
+    /* ── APPLY ── */
+    .apply { background: var(--off-white); }
+
+    .apply-intent {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 24px 0 32px;
+      line-height: 1.7;
+    }
+
+    .apply-box {
+      background: #211609;
+      color: var(--off-white);
+      padding: 48px;
+      margin-top: 40px;
+    }
+
+    .apply-box h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .apply-box > p {
+      color: rgba(245,242,236,0.6);
+      font-size: 0.88rem;
+      margin-bottom: 32px;
+    }
+
+    .form-row { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: rgba(245,242,236,0.45);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.13);
+      color: var(--off-white);
+      padding: 12px 16px;
+      font-size: 0.92rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--accent); }
+    .form-group select option { background: #1a1a1a; }
+
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 480px) { .form-row-2 { grid-template-columns: 1fr; } }
+
+    .privacy-note { font-size: 0.76rem; color: rgba(245,242,236,0.3); margin-bottom: 24px; }
+    .privacy-note a { color: var(--accent); }
+
+    .submit-btn {
+      background: var(--accent);
+      color: var(--black);
+      border: none;
+      padding: 16px 48px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: opacity 0.2s;
+      width: 100%;
+    }
+    .submit-btn:hover { opacity: 0.85; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #140e06;
+      color: rgba(250,246,239,0.3);
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      line-height: 2.2;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── STICKY BAR ── */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(28,18,8,0.96);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(192,88,48,0.2);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      gap: 16px;
+    }
+    .sticky-bar p { font-size: 0.78rem; color: rgba(245,242,236,0.55); margin: 0; }
+    .sticky-bar .btn-primary { white-space: nowrap; padding: 11px 28px; font-size: 0.83rem; }
+
+    @media (max-width: 480px) {
+      .sticky-bar { flex-direction: column; gap: 10px; }
+      .sticky-bar p { text-align: center; }
+      .sticky-bar .btn-primary { width: 100%; text-align: center; }
+      .apply-box { padding: 28px 20px; }
+      section { padding: 60px 20px; }
+    }
+
+    /* ── COMPARE TABLE ── */
+    .compare-table-wrap {
+      margin-top: 40px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      min-width: 520px;
+    }
+
+    .compare-table thead tr {
+      border-bottom: 2px solid rgba(192,88,48,0.3);
+    }
+
+    .compare-th-label {
+      width: 22%;
+      padding: 14px 16px;
+    }
+    .compare-th-other {
+      width: 39%;
+      padding: 14px 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(250,246,239,0.4);
+      letter-spacing: 0.03em;
+      text-align: left;
+    }
+    .compare-th-outlaw {
+      width: 39%;
+      padding: 14px 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+      text-align: left;
+      background: rgba(192,88,48,0.07);
+    }
+
+    .compare-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .compare-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .compare-row-label {
+      padding: 18px 16px;
+      font-size: 0.78rem;
+      color: rgba(250,246,239,0.35);
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    .compare-other {
+      padding: 18px 20px;
+      color: rgba(250,246,239,0.5);
+      vertical-align: top;
+      line-height: 1.7;
+    }
+
+    .compare-outlaw {
+      padding: 18px 20px;
+      color: rgba(250,246,239,0.9);
+      font-weight: 500;
+      vertical-align: top;
+      line-height: 1.7;
+      background: rgba(192,88,48,0.07);
+    }
+
+    /* ── COMPANY VOICES ── */
+    .company-voices { background: var(--off-white); border-top: 1px solid var(--light-gray); }
+
+    .company-voice-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .company-voice {
+      background: white;
+      border: 1px solid var(--light-gray);
+      padding: 28px 32px;
+    }
+
+    .company-voice-text {
+      font-size: 0.93rem;
+      line-height: 1.9;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    .company-voice-source {
+      font-size: 0.78rem;
+      color: var(--gray);
+      letter-spacing: 0.04em;
+    }
+
+    /* reveal */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <span class="hero-tag">就活アウトロー採用 by キャリア解放区</span>
+    <h1>その違和感は、<br><em>正しい。</em></h1>
+    <p class="hero-lead">
+      ESなし。面接なし。服装・髪型自由。<br>
+      就活をやめたわけじゃない。<br>ただ、あのやり方がどうしても合わなかった。<br><br>
+      そういう若者と、ちゃんと向き合いたい企業が、ここにいます。
+    </p>
+    <div class="badges">
+      <span class="badge">ESなし</span>
+      <span class="badge">面接なし</span>
+      <span class="badge">服装・髪型自由</span>
+      <span class="badge">既卒・中退OK</span>
+      <span class="badge">29歳まで</span>
+      <span class="badge">参加費無料</span>
+    </div>
+    <div class="cta-group">
+      <a href="#apply" class="btn-primary">7月の説明会に申し込む</a>
+      <a href="#how" class="btn-ghost">どんな場か知りたい →</a>
+    </div>
+  </div>
+</section>
+
+<!-- stats bar -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <span class="stat-num">22,507<small>人</small></span>
+      <span class="stat-label">累計参加者数</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">879<small>社</small></span>
+      <span class="stat-label">累計参加企業</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">3,351<small>人</small></span>
+      <span class="stat-label">累計内定者数</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">2012</span>
+      <span class="stat-label">年スタート</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PHOTO STRIP ══ -->
+<div class="photo-strip">
+  <img class="main-photo" src="img/session-wide.jpg" alt="セッションの様子">
+  <img src="img/session-group.jpg" alt="グループ対話">
+  <img src="img/session-circle.jpg" alt="対話の様子">
+  <img src="img/session-talk.jpg" alt="説明会の様子">
+  <img src="img/session-casual.jpg" alt="カジュアルな場">
+</div>
+
+<!-- ══ WHY ══ -->
+<section class="why reveal">
+  <div class="container">
+    <span class="section-label">なぜこのサービスをつくったか</span>
+    <h2>「うまくいかない」んじゃなくて、<br>「合わない」だけじゃないかと思って。</h2>
+    <blockquote>
+      面接では言葉が出ないけど、入ってからは誰よりも仕事をする。<br>
+      そういう人を、就活のフィルターが弾いていないか。
+    </blockquote>
+    <p>
+      自己PRが苦手なこと、志望動機をうまく言えないこと。
+      それって、仕事ができないこととは、別の話ですよね。
+    </p>
+    <p>
+      決して働きたくないわけじゃない。頑張る気がないわけでもない。
+      でも「就活」というフォーマットの中ではどうもうまく伝わらなくて、
+      気づいたら降りてしまっていた——そんな若者のために、2012年に始めました。
+      ESも集団面接もここにはありません。あるのは対話だけです。
+    </p>
+
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="compare-th-label"></th>
+            <th class="compare-th-other">一般的なマッチングサービス</th>
+            <th class="compare-th-outlaw">就活アウトロー採用</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="compare-row-label">出会いの順序</td>
+            <td class="compare-other">企業を知る → 興味を持つ → 話す</td>
+            <td class="compare-outlaw">名前も会社も伏せて話す → 惹かれる → 企業を知る</td>
+          </tr>
+          <tr>
+            <td class="compare-row-label">入社の動機</td>
+            <td class="compare-other">「この会社に入りたい」</td>
+            <td class="compare-outlaw">「この人と働きたい」</td>
+          </tr>
+          <tr>
+            <td class="compare-row-label">選考方法</td>
+            <td class="compare-other">ES・面接・グループ討論</td>
+            <td class="compare-outlaw">対話のみ。ESも面接もなし</td>
+          </tr>
+          <tr>
+            <td class="compare-row-label">ブランドの影響</td>
+            <td class="compare-other">知名度・規模で判断しやすい</td>
+            <td class="compare-outlaw">先入観なく、中身だけで判断できる</td>
+          </tr>
+          <tr>
+            <td class="compare-row-label">入社後のギャップ</td>
+            <td class="compare-other">イメージと違うことが起きやすい</td>
+            <td class="compare-outlaw">人として惹かれて入るため、起きにくい</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHO ══ -->
+<section class="who reveal">
+  <div class="container">
+    <span class="section-label">どんな人が来るか</span>
+    <h2>あなたがおかしいんじゃない。<br>その形式が、合ってないだけ。</h2>
+    <p class="who-definition">「就活アウトロー」とは、問題児のことではありません。<br>真面目で、考えすぎるくらい考える。それなのに、面接・ES・スーツという形式の前で言葉を失う。そういう人のことです。</p>
+    <p class="who-note">実際に来る人の多くが、そういう学生です。</p>
+    <p class="who-eligibility">新卒・既卒・大学院生、29歳まで対象です。就活のタイミングを外しただけで、人生が終わるわけじゃない。</p>
+    <p>来る若者には、大きく二つのタイプがいます。どちらでも、どちらでもなくても、全然大丈夫です。</p>
+
+    <div class="persona-tabs">
+      <button class="persona-tab active" onclick="switchTab('positive', this)">ポジティブアウトロー</button>
+      <button class="persona-tab" onclick="switchTab('moyamoya', this)">もやもやアウトロー</button>
+    </div>
+
+    <div class="persona-panel active" id="panel-positive">
+      <h3>就活より大事なことがあって、自分から降りた人</h3>
+      <p class="panel-sub">夢を追いかけたり、海外に出たり。意図的に就活を外れた、行動力のあるタイプ。</p>
+      <ul class="persona-list">
+        <li>スタントマンや芸人、プロゲーマーなど夢を持って挑戦してきた</li>
+        <li>海外放浪・留学などで就活のタイミングを外した</li>
+        <li>LINEスタンプで稼いだり、起業してみたりした経験がある</li>
+        <li>新しいことへの積極性・行動力がある</li>
+        <li>「ワクワクできるか」を仕事選びの軸にしている</li>
+      </ul>
+    </div>
+
+    <div class="persona-panel" id="panel-moyamoya">
+      <h3>嘘がつけなくて、うまく就活できなかった人</h3>
+      <p class="panel-sub">考えは深いのに、面接という場で言語化できない。内向型の、真面目な人たち。</p>
+      <ul class="persona-list">
+        <li>志望動機を聞かれると「分かりません」と正直に答えてしまう</li>
+        <li>物事にじっくり取り組む真面目さがある。専門領域への知識は高い</li>
+        <li>建前でとりつくろうのが苦手で、コミュニケーションがやや不器用</li>
+        <li>地頭がよく深く考えられるが、プレッシャーに弱い</li>
+        <li>「自分は社会不適合者かもしれない」と思い込んでいる</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ HOW ══ -->
+<section class="how reveal" id="how">
+  <div class="container">
+    <span class="section-label">どんな場か</span>
+    <h2>面接じゃない。対話です。</h2>
+    <p style="color:rgba(250,246,239,0.6)">シンプルです。出会う、関わる、仲良くなる。それだけです。</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>企画説明会（オンライン・1時間）</h3>
+          <p>「怪しいけど気になる」くらいで来て大丈夫です。このプログラムが何者かを、正直に話します。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>ワークショップ（オンライン・2日間）</h3>
+          <p>就活への違和感を参加者同士で話し合います。「自分だけじゃなかった」と気づく時間です。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>採用企業との「哲学対話」（オンライン・半日）</h3>
+          <p>最初は社名も大学名も伏せて、哲学的なテーマで自由に議論します。プレゼンも自己PRも、なし。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>マッチング（〜内定）</h3>
+          <p>「この人と働きたい」と思えたら、自分からアプローチしてください。方法は自由です。ESも面接もここにはありません。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="how-photo">
+      <img src="img/session-group.jpg" alt="採用企業との対話セッション">
+      <div class="how-photo-caption">実際のセッションの様子。会社名も大学名も最初は明かしません。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VOICES ══ -->
+<section class="voices reveal">
+  <div class="container">
+    <span class="section-label">参加した人の話</span>
+    <h2>ここで初めて、ちゃんと話せた。</h2>
+
+    <div class="voice-list">
+      <div class="voice">
+        <div class="voice-bar"></div>
+        <div>
+          <p class="voice-text">
+            普通の就活をするのが絶対に嫌だったんです。髪も染めてますし。だけど働きたいという思いは強くて。
+            アウトロー採用は「空気読み続けなくてもいいんだ」と思えた場でした。企業とのセッションで、
+            どうしてもこの人と一緒に働きたいと思える社長に出会えた。
+            アルバイトから始めて、今は正社員です。仕事はめちゃくちゃ大変ですけど、自分で納得して入ったので充実しています。
+          </p>
+          <span class="voice-name">A・S ／ ゲーム会社ディレクター</span>
+        </div>
+      </div>
+
+      <div class="voice">
+        <div class="voice-bar"></div>
+        <div>
+          <p class="voice-text">
+            「面接なしで採用したいけど、どうしたら相互理解できるか一緒に考えてほしい」と社長に言われて衝撃を受けました。本気だなと。
+            就活を茶番だと斜に構えていた自分が、気づいたら引き込まれていた。
+            面接はしなかったけど、食事に行ったり議論していたら、一緒に働きたいと思うようになっていました。
+          </p>
+          <span class="voice-name">Y・S ／ ITエンジニア</span>
+        </div>
+      </div>
+
+      <div class="voice">
+        <div class="voice-bar"></div>
+        <div>
+          <p class="voice-text">
+            本当に面接らしい面接はせず、エントリーシートも出しませんでした。社長や社員とざっくばらんに話すだけで。
+            これで決まるの？と思っていたけど、本当に採用通知が来て驚きました。
+          </p>
+          <span class="voice-name">K・Y ／ ITサーバーエンジニア</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RESULTS ══ -->
+<section class="results reveal">
+  <div class="container">
+    <span class="section-label">企業の採用実績</span>
+    <h2>ナビサイトでは出会えなかった人が、ここにいた</h2>
+    <p style="color:rgba(250,246,239,0.6)">
+      IT・人材・出版・メーカー・介護など、業種はさまざま。参加企業の声を一部、紹介します。
+    </p>
+
+    <div class="case-grid">
+      <div class="case-item">
+        <span class="case-num">13名</span>
+        <span class="case-label">IT系ベンチャーが<br>2年間で採用</span>
+      </div>
+      <div class="case-item">
+        <span class="case-num">15名+</span>
+        <span class="case-label">不人気業界の企業が<br>年間採用・退職者1名</span>
+      </div>
+      <div class="case-item">
+        <span class="case-num">30名+</span>
+        <span class="case-label">攻めの契約社員採用<br>海外大卒など多様</span>
+      </div>
+      <div class="case-item">
+        <span class="case-num">6名</span>
+        <span class="case-label">介護事業社が採用<br>早慶・筑波・同志社など</span>
+      </div>
+    </div>
+
+    <p style="color:rgba(245,242,236,0.3); font-size:0.8rem; margin-top:24px;">
+      ※ 財閥系金融・大手インフラ・商社は参加しません。本気で向き合える規模の企業が集まっています。
+    </p>
+  </div>
+</section>
+
+<!-- ══ COMPANY VOICES ══ -->
+<section class="company-voices reveal">
+  <div class="container">
+    <span class="section-label">採用した企業の話</span>
+    <h2>経営者・人事の声</h2>
+    <p>参加企業は「ナビサイトでは出会えない人材がいた」と言います。</p>
+
+    <div class="company-voice-list">
+      <div class="company-voice">
+        <p class="company-voice-text">
+          当社の規模では、ナビサイトなどの通常の採用活動では出会えないレベルの学生と出会えています。密なコミュニケーションを取れば内定まで繋がる確率も高く、内定辞退もないのです。
+        </p>
+        <span class="company-voice-source">ITシステム開発企業 ／ 人事担当</span>
+      </div>
+
+      <div class="company-voice">
+        <p class="company-voice-text">
+          事前のワークショップを通じて参加者が自己開示しやすい状態になっています。どんな状況で力を発揮できるのか、逆にどんな状況だとストレスを感じるのか、入社前から理解できているので入社後のコミュニケーションも非常に取りやすいと配属先のマネジャーからも好評です。
+        </p>
+        <span class="company-voice-source">教育系企業 ／ 採用担当</span>
+      </div>
+
+      <div class="company-voice">
+        <p class="company-voice-text">
+          人事として素を出して勝負しないと相手にされないシビアな場でもあります。もしかするとこれが本質的な採用のあり方なのかも知れません。
+        </p>
+        <span class="company-voice-source">コンサル企業 ／ 人事部長</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SCHEDULE ══ -->
+<section class="schedule reveal">
+  <div class="container">
+    <span class="section-label">7月の日程</span>
+    <h2>次回は7月開催です</h2>
+
+    <div class="schedule-list">
+      <div class="schedule-item">
+        <div class="schedule-date">7/7（火）<br>7/8（水）<br>各 20:00–21:00</div>
+        <div class="schedule-desc">
+          <strong>企画説明会（オンライン）</strong>
+          いずれか1日程に参加。「怪しいけど気になる」くらいで来て大丈夫です。
+        </div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-date">7/9（木）<br>7/10（金）<br>各 19:00–22:00</div>
+        <div class="schedule-desc">
+          <strong>ワークショップ（オンライン）</strong>
+          できる限り両日参加。参加企業は毎回異なります。
+        </div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-date">7/11（土）<br>12:30–18:00</div>
+        <div class="schedule-desc">
+          <strong>採用企業との「哲学対話」（オンライン）</strong>
+          参加必須。企業の経営者・社員と自由なテーマで対話します。
+        </div>
+      </div>
+    </div>
+
+    <p class="schedule-note">
+      ※ 全セッションに参加できなくても申し込み可能です。<br>
+      ※ 参加者による自主企画も歓迎。昨年は般若心経を学ぶグループが自然発生しました。
+    </p>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="about reveal">
+  <div class="container">
+    <span class="section-label">運営しているのは</span>
+    <h2>誰がやっているか</h2>
+    <p>NPO法人キャリア解放区が運営しています。マッチングが成立したとき、参加企業からのみ報酬をいただきます。若者からは一切いただきません。</p>
+
+    <div class="about-profile">
+      <div class="about-avatar">納</div>
+      <div>
+        <p class="about-name">納富 順一</p>
+        <p class="about-title">特定非営利活動法人キャリア解放区 代表理事</p>
+        <p class="about-bio">
+          テレビ番組制作会社勤務後、マイナビ転職の求人広告営業を経て、障害者専門の人材紹介会社へ転職。新規事業開発を担当後、ソーシャルメディアを活用した採用支援事業に参画。その後、プロデューサーの若新雄純氏が持ち込んだ「就活アウトロー採用」の企画と出会い、現在に至る。
+        </p>
+      </div>
+    </div>
+
+    <div class="license-badge">
+      特定非営利活動法人キャリア解放区<br>
+      有料職業紹介：厚生労働大臣許可番号 13-ユ-306761<br>
+      設立：2013年9月
+    </div>
+  </div>
+</section>
+
+<!-- ══ NEXT STEPS ══ -->
+<section class="next-steps reveal">
+  <div class="container">
+    <span class="section-label">申し込んだら</span>
+    <h2>3ステップで始まります</h2>
+    <div class="steps-flow">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div>
+          <p class="step-title">フォームに記入（5分）</p>
+          <p class="step-desc">名前とメールアドレスだけでOK。書いた内容で合否は決まりません。</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div>
+          <p class="step-title">担当者からメールが届く</p>
+          <p class="step-desc">2〜3営業日以内に、説明会の案内をお送りします。</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div>
+          <p class="step-title">説明会に参加する</p>
+          <p class="step-desc">選考ではありません。気になることは何でも聞いてください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ APPLY ══ -->
+<section class="apply reveal" id="apply">
+  <div class="container">
+    <span class="section-label">参加してみる</span>
+    <h2>まず、話だけ聞きに来てください。</h2>
+    <p>選考も審査もありません。「気になるけどまだ決めてない」で十分です。来てから考えてください。</p>
+
+    <p class="apply-intent">学歴も経歴も関係ありません。就活という形式のせいで、あなたの能力が正しく伝わらないだけです。</p>
+
+    <div class="apply-box">
+      <h3>企画説明会への申し込み</h3>
+      <p>書いた内容で合否が決まることはありません。気軽に書いてください。</p>
+
+      <form>
+        <div class="form-row">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>お名前（姓）*</label>
+              <input type="text" placeholder="山田">
+            </div>
+            <div class="form-group">
+              <label>お名前（名）*</label>
+              <input type="text" placeholder="太郎">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>フリガナ*</label>
+            <input type="text" placeholder="ヤマダ タロウ">
+          </div>
+
+          <div class="form-group">
+            <label>メールアドレス*（キャリアメール不可）</label>
+            <input type="email" placeholder="your@email.com">
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>学校名・学部（任意）</label>
+              <input type="text" placeholder="○○大学 △△学部">
+            </div>
+            <div class="form-group">
+              <label>年齢*</label>
+              <input type="number" placeholder="22" min="18" max="29">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>学歴・状況*</label>
+              <select>
+                <option value="">選択してください</option>
+                <option>大学 在学中（3年）</option>
+                <option>大学 在学中（4年以上）</option>
+                <option>大学院 在学中</option>
+                <option>大学 中退</option>
+                <option>既卒</option>
+                <option>その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>希望日程*</label>
+              <select>
+                <option value="">選択してください</option>
+                <option>7月7日（火）20:00–21:00</option>
+                <option>7月8日（水）20:00–21:00</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>気になっていること・聞きたいこと（任意）</label>
+            <textarea rows="4" placeholder="怪しいとか、本当にESなしなのかとか、なんでも。"></textarea>
+          </div>
+        </div>
+
+        <p class="privacy-note">送信することで<a href="#">プライバシーポリシー</a>に同意したものとみなします。</p>
+        <button type="submit" class="submit-btn">無料で申し込む</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <p>就活アウトロー採用 by <a href="https://career-kaihohku.org/">特定非営利活動法人キャリア解放区</a></p>
+  <p><a href="#">プライバシーポリシー</a>　／　<a href="#">採用を検討している企業の方へ</a></p>
+  <p style="margin-top:8px">© 2024 NPO Career-Kaihohku. All Rights Reserved.</p>
+</footer>
+
+<!-- sticky -->
+<div class="sticky-bar">
+  <p>7月開催、参加無料。まず話だけ聞きに来てください。</p>
+  <a href="#apply" class="btn-primary">説明会に申し込む</a>
+</div>
+
+<script>
+  // tab switch
+  function switchTab(type, btn) {
+    document.querySelectorAll('.persona-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.persona-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + type).classList.add('active');
+  }
+
+  // scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
