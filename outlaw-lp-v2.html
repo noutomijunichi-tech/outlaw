@@ -106,6 +106,16 @@
       border-radius: 2px;
     }
 
+    .scroll-hint {
+      margin-top: 48px;
+      color: rgba(255,255,255,0.3);
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
     .cta-group {
       display: flex;
       flex-wrap: wrap;
@@ -372,34 +382,50 @@
     .how h2 { color: var(--off-white); }
 
     .steps {
-      margin-top: 48px;
-      display: flex;
-      flex-direction: column;
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255,255,255,0.07);
     }
 
     .step {
-      display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 24px;
-      padding: 28px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      align-items: start;
+      padding: 24px 28px;
+      background: #211609;
     }
-    .step:last-child { border-bottom: none; }
+
+    .step-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
 
     .step-num {
-      font-size: 1.8rem;
+      font-size: 0.85rem;
       font-weight: 700;
-      color: rgba(200,169,110,0.28);
+      color: var(--accent);
+      opacity: 0.7;
       line-height: 1;
-      padding-top: 4px;
+      flex-shrink: 0;
     }
 
     .step-content h3 {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
       color: var(--off-white);
-      margin-bottom: 6px;
+      margin: 0;
+    }
+
+    .step-desc {
+      font-size: 0.88rem;
+      color: rgba(250,246,239,0.55);
+      line-height: 1.8;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .steps { grid-template-columns: 1fr; }
     }
     .step-content p {
       font-size: 0.9rem;
@@ -438,7 +464,7 @@
 
     .voice-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-top: 48px;
     }
@@ -446,18 +472,9 @@
     .voice {
       background: white;
       border: 1px solid var(--light-gray);
-      padding: 32px 28px 24px;
+      padding: 28px 24px;
       display: flex;
       flex-direction: column;
-    }
-
-    .voice-quote {
-      font-size: 3rem;
-      line-height: 1;
-      color: var(--accent);
-      font-family: Georgia, serif;
-      margin-bottom: 12px;
-      opacity: 0.6;
     }
 
     .voice-text {
@@ -475,17 +492,25 @@
       padding-top: 12px;
     }
 
+    @media (max-width: 700px) {
+      .voice-list { grid-template-columns: 1fr; }
+    }
+
     /* ── RESULTS ── */
     .results { background: #1c1208; color: var(--off-white); }
     .results h2 { color: var(--off-white); }
 
     .case-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 1px;
       background: rgba(255,255,255,0.07);
       margin-top: 40px;
       border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    @media (max-width: 600px) {
+      .case-grid { grid-template-columns: 1fr 1fr; }
     }
 
     .case-item {
@@ -920,8 +945,11 @@
       <span class="badge">参加費無料</span>
     </div>
     <div class="cta-group">
-      <a href="#apply" class="btn-primary">7月の説明会に申し込む</a>
-      <a href="#how" class="btn-ghost">どんな場か知りたい →</a>
+      <a href="#how" class="btn-primary">どんな場か知りたい</a>
+      <a href="#apply" class="btn-ghost">申し込む →</a>
+    </div>
+    <div class="scroll-hint">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     </div>
   </div>
 </section>
@@ -1076,32 +1104,32 @@
 
     <div class="steps">
       <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-content">
-          <h3>企画説明会（オンライン・1時間）</h3>
-          <p>「怪しいけど気になる」くらいで来て大丈夫です。このプログラムが何者かを、正直に話します。</p>
+        <div class="step-header">
+          <span class="step-num">1</span>
+          <div class="step-content"><h3>企画説明会（オンライン・1時間）</h3></div>
         </div>
+        <p class="step-desc">「怪しいけど気になる」くらいで来て大丈夫です。このプログラムが何者かを、正直に話します。</p>
       </div>
       <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-content">
-          <h3>ワークショップ（オンライン・2日間）</h3>
-          <p>就活への違和感を参加者同士で話し合います。「自分だけじゃなかった」と気づく時間です。</p>
+        <div class="step-header">
+          <span class="step-num">2</span>
+          <div class="step-content"><h3>ワークショップ（オンライン・2日間）</h3></div>
         </div>
+        <p class="step-desc">就活への違和感を参加者同士で話し合います。「自分だけじゃなかった」と気づく時間です。</p>
       </div>
       <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-content">
-          <h3>採用企業との「哲学対話」（オンライン・半日）</h3>
-          <p>最初は社名も大学名も伏せて、哲学的なテーマで自由に議論します。プレゼンも自己PRも、なし。</p>
+        <div class="step-header">
+          <span class="step-num">3</span>
+          <div class="step-content"><h3>採用企業との「哲学対話」（オンライン・半日）</h3></div>
         </div>
+        <p class="step-desc">最初は社名も大学名も伏せて、哲学的なテーマで自由に議論します。プレゼンも自己PRも、なし。</p>
       </div>
       <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-content">
-          <h3>マッチング（〜内定）</h3>
-          <p>「この人と働きたい」と思えたら、自分からアプローチしてください。方法は自由です。ESも面接もここにはありません。</p>
+        <div class="step-header">
+          <span class="step-num">4</span>
+          <div class="step-content"><h3>マッチング（〜内定）</h3></div>
         </div>
+        <p class="step-desc">「この人と働きたい」と思えたら、自分からアプローチしてください。方法は自由です。ESも面接もここにはありません。</p>
       </div>
     </div>
 
@@ -1120,20 +1148,17 @@
 
     <div class="voice-list">
       <div class="voice">
-        <div class="voice-quote">"</div>
-        <p class="voice-text">空気読み続けなくてもいいんだと思えた場でした。企業とのセッションで、どうしてもこの人と一緒に働きたいと思える社長に出会えた。</p>
+<p class="voice-text">空気読み続けなくてもいいんだと思えた場でした。企業とのセッションで、どうしてもこの人と一緒に働きたいと思える社長に出会えた。</p>
         <span class="voice-name">A・S ／ ゲーム会社ディレクター</span>
       </div>
 
       <div class="voice">
-        <div class="voice-quote">"</div>
-        <p class="voice-text">就活を茶番だと斜に構えていた自分が、気づいたら引き込まれていた。面接はしなかったけど、食事に行ったり議論していたら、一緒に働きたいと思うようになっていました。</p>
+<p class="voice-text">就活を茶番だと斜に構えていた自分が、気づいたら引き込まれていた。面接はしなかったけど、食事に行ったり議論していたら、一緒に働きたいと思うようになっていました。</p>
         <span class="voice-name">Y・S ／ ITエンジニア</span>
       </div>
 
       <div class="voice">
-        <div class="voice-quote">"</div>
-        <p class="voice-text">本当に面接らしい面接はせず、エントリーシートも出しませんでした。これで決まるの？と思っていたけど、本当に採用通知が来て驚きました。</p>
+<p class="voice-text">本当に面接らしい面接はせず、エントリーシートも出しませんでした。これで決まるの？と思っていたけど、本当に採用通知が来て驚きました。</p>
         <span class="voice-name">K・Y ／ ITサーバーエンジニア</span>
       </div>
     </div>
@@ -1311,7 +1336,7 @@
 
     <div class="apply-box">
       <h3>企画説明会への申し込み</h3>
-      <p>書いた内容で合否が決まることはありません。気軽に書いてください。</p>
+      <p>名前とメールアドレスだけでOKです。</p>
 
       <form>
         <div class="form-row">
@@ -1327,52 +1352,8 @@
           </div>
 
           <div class="form-group">
-            <label>フリガナ*</label>
-            <input type="text" placeholder="ヤマダ タロウ">
-          </div>
-
-          <div class="form-group">
             <label>メールアドレス*（キャリアメール不可）</label>
             <input type="email" placeholder="your@email.com">
-          </div>
-
-          <div class="form-row-2">
-            <div class="form-group">
-              <label>学校名・学部（任意）</label>
-              <input type="text" placeholder="○○大学 △△学部">
-            </div>
-            <div class="form-group">
-              <label>年齢*</label>
-              <input type="number" placeholder="22" min="18" max="29">
-            </div>
-          </div>
-
-          <div class="form-row-2">
-            <div class="form-group">
-              <label>学歴・状況*</label>
-              <select>
-                <option value="">選択してください</option>
-                <option>大学 在学中（3年）</option>
-                <option>大学 在学中（4年以上）</option>
-                <option>大学院 在学中</option>
-                <option>大学 中退</option>
-                <option>既卒</option>
-                <option>その他</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>希望日程*</label>
-              <select>
-                <option value="">選択してください</option>
-                <option>7月7日（火）20:00–21:00</option>
-                <option>7月8日（水）20:00–21:00</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>気になっていること・聞きたいこと（任意）</label>
-            <textarea rows="4" placeholder="怪しいとか、本当にESなしなのかとか、なんでも。"></textarea>
           </div>
         </div>
 
@@ -1387,7 +1368,7 @@
 <footer>
   <p>就活アウトロー採用 by <a href="https://career-kaihohku.org/">特定非営利活動法人キャリア解放区</a></p>
   <p><a href="#">プライバシーポリシー</a>　／　<a href="#">採用を検討している企業の方へ</a></p>
-  <p style="margin-top:8px">© 2024 NPO Career-Kaihohku. All Rights Reserved.</p>
+  <p style="margin-top:8px">© 2026 NPO Career-Kaihohku. All Rights Reserved.</p>
 </footer>
 
 <!-- sticky -->
