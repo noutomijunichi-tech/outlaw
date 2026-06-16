@@ -230,6 +230,12 @@
     .why p { color: rgba(250,246,239,0.75); }
     .why h2 { color: var(--off-white); }
 
+    .why-p {
+      margin-bottom: 24px;
+      line-height: 2;
+      font-size: 0.97rem;
+    }
+
     blockquote {
       border-left: 3px solid var(--accent);
       padding-left: 24px;
@@ -251,18 +257,49 @@
       margin: 24px 0 12px;
     }
 
-    .who-note {
-      font-size: 0.85rem;
-      color: var(--gray);
-      margin-bottom: 12px;
+    .who-intro-box {
+      background: white;
+      border: 1px solid var(--light-gray);
+      padding: 28px 32px;
+      margin: 28px 0 32px;
+    }
+
+    .who-definition {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--text);
+      border-left: 3px solid var(--accent);
+      padding-left: 16px;
+      margin-bottom: 20px;
+    }
+
+    .who-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .who-tag {
+      background: var(--light-gray);
+      color: var(--text);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 2px;
     }
 
     .who-eligibility {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 32px;
+      font-size: 0.9rem;
+      color: var(--gray);
       line-height: 1.7;
+      margin: 0;
+    }
+
+    .who-tab-intro {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 20px;
     }
 
     .persona-tabs {
@@ -400,29 +437,42 @@
     .voices { background: var(--off-white); }
 
     .voice-list {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
       margin-top: 48px;
     }
 
     .voice {
-      display: grid;
-      grid-template-columns: 4px 1fr;
-      gap: 28px;
+      background: white;
+      border: 1px solid var(--light-gray);
+      padding: 32px 28px 24px;
+      display: flex;
+      flex-direction: column;
     }
-    .voice-bar { background: var(--accent); }
+
+    .voice-quote {
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--accent);
+      font-family: Georgia, serif;
+      margin-bottom: 12px;
+      opacity: 0.6;
+    }
 
     .voice-text {
       font-size: 0.93rem;
       line-height: 1.9;
       color: #333;
-      margin-bottom: 14px;
+      flex: 1;
+      margin-bottom: 20px;
     }
     .voice-name {
       font-size: 0.78rem;
       color: var(--gray);
       letter-spacing: 0.06em;
+      border-top: 1px solid var(--light-gray);
+      padding-top: 12px;
     }
 
     /* ── RESULTS ── */
@@ -916,14 +966,14 @@
       面接では言葉が出ないけど、入ってからは誰よりも仕事をする。<br>
       そういう人を、就活のフィルターが弾いていないか。
     </blockquote>
-    <p>
-      自己PRが苦手なこと、志望動機をうまく言えないこと。
+    <p class="why-p">
+      自己PRが苦手なこと、志望動機をうまく言えないこと。<br>
       それって、仕事ができないこととは、別の話ですよね。
     </p>
-    <p>
-      決して働きたくないわけじゃない。頑張る気がないわけでもない。
-      でも「就活」というフォーマットの中ではどうもうまく伝わらなくて、
-      気づいたら降りてしまっていた——そんな若者のために、2012年に始めました。
+    <p class="why-p">
+      決して働きたくないわけじゃない。頑張る気がないわけでもない。<br>
+      でも「就活」というフォーマットの中ではどうもうまく伝わらなくて、<br>
+      気づいたら降りてしまっていた——そんな若者のために、2012年に始めました。<br>
       ESも集団面接もここにはありません。あるのは対話だけです。
     </p>
 
@@ -973,10 +1023,17 @@
   <div class="container">
     <span class="section-label">どんな人が来るか</span>
     <h2>あなたがおかしいんじゃない。<br>その形式が、合ってないだけ。</h2>
-    <p class="who-definition">「就活アウトロー」とは、問題児のことではありません。<br>真面目で、考えすぎるくらい考える。それなのに、面接・ES・スーツという形式の前で言葉を失う。そういう人のことです。</p>
-    <p class="who-note">実際に来る人の多くが、そういう学生です。</p>
-    <p class="who-eligibility">新卒・既卒・大学院生、29歳まで対象です。就活のタイミングを外しただけで、人生が終わるわけじゃない。</p>
-    <p>来る若者には、大きく二つのタイプがいます。どちらでも、どちらでもなくても、全然大丈夫です。</p>
+    <div class="who-intro-box">
+      <p class="who-definition">問題児のことではありません。真面目で、考えすぎるくらい考える。ただ、面接・ES・スーツという形式の前で言葉を失う。そういう人のことです。</p>
+      <div class="who-tags">
+        <span class="who-tag">新卒</span>
+        <span class="who-tag">既卒</span>
+        <span class="who-tag">大学院生</span>
+        <span class="who-tag">29歳まで</span>
+      </div>
+      <p class="who-eligibility">就活のタイミングを外しただけで、人生が終わるわけじゃない。</p>
+    </div>
+    <p class="who-tab-intro">来る若者には、大きく二つのタイプがいます。</p>
 
     <div class="persona-tabs">
       <button class="persona-tab active" onclick="switchTab('positive', this)">ポジティブアウトロー</button>
@@ -1063,39 +1120,21 @@
 
     <div class="voice-list">
       <div class="voice">
-        <div class="voice-bar"></div>
-        <div>
-          <p class="voice-text">
-            普通の就活をするのが絶対に嫌だったんです。髪も染めてますし。だけど働きたいという思いは強くて。
-            アウトロー採用は「空気読み続けなくてもいいんだ」と思えた場でした。企業とのセッションで、
-            どうしてもこの人と一緒に働きたいと思える社長に出会えた。
-            アルバイトから始めて、今は正社員です。仕事はめちゃくちゃ大変ですけど、自分で納得して入ったので充実しています。
-          </p>
-          <span class="voice-name">A・S ／ ゲーム会社ディレクター</span>
-        </div>
+        <div class="voice-quote">"</div>
+        <p class="voice-text">空気読み続けなくてもいいんだと思えた場でした。企業とのセッションで、どうしてもこの人と一緒に働きたいと思える社長に出会えた。</p>
+        <span class="voice-name">A・S ／ ゲーム会社ディレクター</span>
       </div>
 
       <div class="voice">
-        <div class="voice-bar"></div>
-        <div>
-          <p class="voice-text">
-            「面接なしで採用したいけど、どうしたら相互理解できるか一緒に考えてほしい」と社長に言われて衝撃を受けました。本気だなと。
-            就活を茶番だと斜に構えていた自分が、気づいたら引き込まれていた。
-            面接はしなかったけど、食事に行ったり議論していたら、一緒に働きたいと思うようになっていました。
-          </p>
-          <span class="voice-name">Y・S ／ ITエンジニア</span>
-        </div>
+        <div class="voice-quote">"</div>
+        <p class="voice-text">就活を茶番だと斜に構えていた自分が、気づいたら引き込まれていた。面接はしなかったけど、食事に行ったり議論していたら、一緒に働きたいと思うようになっていました。</p>
+        <span class="voice-name">Y・S ／ ITエンジニア</span>
       </div>
 
       <div class="voice">
-        <div class="voice-bar"></div>
-        <div>
-          <p class="voice-text">
-            本当に面接らしい面接はせず、エントリーシートも出しませんでした。社長や社員とざっくばらんに話すだけで。
-            これで決まるの？と思っていたけど、本当に採用通知が来て驚きました。
-          </p>
-          <span class="voice-name">K・Y ／ ITサーバーエンジニア</span>
-        </div>
+        <div class="voice-quote">"</div>
+        <p class="voice-text">本当に面接らしい面接はせず、エントリーシートも出しませんでした。これで決まるの？と思っていたけど、本当に採用通知が来て驚きました。</p>
+        <span class="voice-name">K・Y ／ ITサーバーエンジニア</span>
       </div>
     </div>
   </div>
