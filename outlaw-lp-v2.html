@@ -62,10 +62,13 @@
 
     .hero-tag {
       display: inline-block;
-      font-size: 13px;
-      letter-spacing: 0.05em;
-      color: rgba(250,246,239,0.7);
-      margin-bottom: 24px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: rgba(250,246,239,0.95);
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 8px;
     }
 
     .hero h1 {
@@ -532,7 +535,9 @@
     }
 
     /* ── SCHEDULE ── */
-    .schedule { background: var(--off-white); }
+    .schedule { background: #1c1208; color: var(--off-white); }
+    .schedule h2 { color: var(--off-white); }
+    .schedule .section-label { color: var(--accent); }
 
     .schedule-list {
       margin-top: 40px;
@@ -545,12 +550,12 @@
       display: grid;
       grid-template-columns: 140px 1fr;
       gap: 0;
-      border-bottom: 1px solid var(--light-gray);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .schedule-item:last-child { border-bottom: none; }
 
     .schedule-date {
-      background: #231609;
+      background: rgba(255,255,255,0.05);
       color: var(--accent);
       padding: 20px;
       font-size: 0.82rem;
@@ -563,15 +568,15 @@
     .schedule-desc {
       padding: 20px 24px;
       font-size: 0.9rem;
-      color: var(--text);
+      color: rgba(250,246,239,0.75);
       line-height: 1.7;
     }
-    .schedule-desc strong { font-weight: 700; display: block; margin-bottom: 4px; }
+    .schedule-desc strong { font-weight: 700; display: block; margin-bottom: 4px; color: var(--off-white); }
 
     .schedule-note {
       margin-top: 20px;
       font-size: 0.8rem;
-      color: var(--gray);
+      color: rgba(250,246,239,0.4);
       line-height: 1.9;
     }
 
@@ -1122,7 +1127,7 @@
           <span class="step-num">3</span>
           <div class="step-content"><h3>採用企業との「哲学対話」（オンライン・半日）</h3></div>
         </div>
-        <p class="step-desc">最初は社名も大学名も伏せて、哲学的なテーマで自由に議論します。プレゼンも自己PRも、なし。</p>
+        <p class="step-desc">正解のないテーマについて、全員で自由に話します。発表も評価もありません。最初は社名も大学名も伏せて議論します。プレゼンも自己PRも、なし。</p>
       </div>
       <div class="step">
         <div class="step-header">
